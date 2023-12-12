@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="form">
+        <label for="num1" ></label>
+        <input type="text" id="num1" required>
+
+        <label for="num2" ></label>
+        <input type="text" id="num2" required>
+<div class="btns">
+    <button class="addBtn" onclick="handleAddition()">Add</button>
+  <button class="printBtn" onclick="handlePrinting()">Print PDF</button>
+</div>
+<div id="Solution-div">
+    <span class="result">Result:</span> 
+<span id="solution">0 </span>
+</div>
+
+    </div>
+</body>
+
+
+<script>
+
+const handleAddition =async()=>{
+    const num1 = document.getElementById('num1').value;
+            const num2 = document.getElementById('num2').value;
+
+            try {
+                const response = await fetch('http://localhost:8000/api/v1/add', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({"num1":num1,"num2":num2}),
+                });
+                
+
+                const data = await response.json();
+                document.getElementById('solution').innerText = ""+ data.ans;
+                document.getElementById('num1').value=""
+                document.getElementById('num2').value=""
+                // console.log(response)
+                
+            } catch (error) {
+                console.error('Error:', error);
+            }
+}
+
+
+const handlePrinting =async()=>{
+    
+    window.open('./file.pdf', '_blank');
+    // console.log("printing")
+}
+
+</script>
+</html>

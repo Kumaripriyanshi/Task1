@@ -1,0 +1,108 @@
+/* form designing  */
+
+.form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    flex-direction: column;
+    width: 50vw;
+    height: 70vh;
+    background-color: #e4f0f0;
+}
+
+/* input box  */
+#num1{
+    width: 83%;
+    height: 11%;
+    outline: none;
+    font-size: 31px;
+}
+
+#num2{
+    width: 83%;
+    height: 11%;
+    outline: none;
+    font-size: 31px;
+}
+
+/* btns  */
+
+.btns{
+width: 100%;
+height: 15%;
+/* text-align: center; */
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+}
+
+.addBtn{
+    width: 28%;
+    height: 90%;
+    /* margin-top: 39px; */
+    box-sizing: border-box;
+    margin-right: 15px;
+    font-size: 142%;
+    outline: none;
+    font-weight: bold;
+    background-color: #739c9c;
+    border: none;
+    cursor: pointer;
+}
+
+.printBtn{
+    width: 28%;
+    height: 90%;
+    /* margin-top: 39px; */
+    box-sizing: border-box;
+    font-size: 105%;
+    outline: none;
+    font-weight: bold;
+    background-color: #87d3d3;
+    border: none;
+    cursor: pointer;
+}
+
+body{
+    background-color: #173959;
+}
+
+/* presentation  */
+
+#Solution-div{
+/* margin-top: 13%; */
+height: 22%;
+}
+
+#solution{
+    border: 2px solid red;
+    width: 36px;
+    
+    font-size: 108%;
+}
+
+.result{
+    font-size: 143%;
+    font-weight: bold;
+}
+
+
+/* Media Queries  */
+
+@media screen and (max-width: 736px) {
+.addBtn{
+    width: 100%;
+    height: 56%;
+    margin-right: 0px;
+    margin-bottom: 6%;
+}
+.printBtn{
+    width: 100%;
+    height: 56%;
+
+}
+
+
+  }
